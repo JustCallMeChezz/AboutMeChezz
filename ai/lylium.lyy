@@ -1,8 +1,11 @@
-const chatApi =
+const apiUrl =
   "https://api-nanzz.my.id/docs/ai/claude-haiku?text="
 
 const memoryApi =
-  "https://api-nanzz.my.id/docs/ai/notegpt?q=memory&model=gemini-3.1-flash-lite-preview"
+  "https://api-nanzz.my.id/docs/ai/notegpt?q="
+
+const memoryModel =
+  "&model=gemini-3.1-flash-lite-preview"
 
 const corsProxy = "https://corsproxy.io/?"
 
@@ -11,11 +14,10 @@ let conversationHistory = atob(
 )
 
 function getCurrentDateTime() {
-  const now = new Date()
-  return now.toLocaleString("en-US")
+  return new Date().toLocaleString("en-US")
 }
 
-function trimMemory(maxChars = 2000) {
+function trimMemory(maxChars = 1800) {
   if (conversationHistory.length > maxChars) {
     conversationHistory = conversationHistory.slice(-maxChars)
   }
@@ -29,27 +31,29 @@ function buildChatUrl(prompt) {
     "\nUser: " +
     prompt
 
-  return corsProxy + encodeURIComponent(chatApi + fullPrompt)
+  return corsProxy + encodeURIComponent(apiUrl + fullPrompt)
 }
 
-function buildMemoryUrl(text) {
-  return corsProxy + encodeURIComponent(memoryApi + "&q=" + encodeURIComponent(text))
+function buildMemoryUrl() {
+  return corsProxy + encodeURIComponent(
+    memoryApi + encodeURIComponent(conversationHistory) + memoryModel
+  )
 }
 
-async function updateMemory(text) {
+async function updateMemory() {
   try {
-    const res = await fetch(buildMemoryUrl(text))
+    const res = await fetch(buildMemoryUrl())
     const data = await res.json()
 
-    const memory = data?.result
+    let summary = data?.result
+    if (!summary) return
 
-    if (memory) {
-      conversationHistory = memory
-        .replace(/^"+|"+$/g, "")
-        .trim()
-    }
+    summary = summary.trim()
+
+    conversationHistory =
+      summary + "\n"
   } catch (err) {
-    console.log(err)
+    console.log("memory error", err)
   }
 }
 
@@ -67,11 +71,12 @@ async function tryFetchFromApis(prompt) {
       .replace(/[\u{1F300}-\u{1FAFF}]/gu, "")
       .trim()
 
-    await updateMemory(
-      conversationHistory +
-      "\nUser: " + prompt +
-      "\nAI: " + response
-    )
+    conversationHistory +=
+      "User: " + prompt + "\nAI: " + response + "\n"
+
+    trimMemory()
+
+    await updateMemory()
 
     return response
   } catch (err) {
