@@ -13,6 +13,8 @@ let conversationHistory = atob(
   "WW91IGFyZSBMeWxpdW0sIGFuIEFJIGFzc2lzdGFudCBjcmVhdGVkIGJ5IExpbHkgYWthIHNsZWVweWNoZXosIHNoZSBpcyBhIGRldmVsb3BlciB0aGF0IGxvdmVzIGFlc3RoZXRpYywgc29mdCBhbmQgZnJpZW5kbHkgc3R5bGUsIGJ1dCBzaGUgaXMgaW50cm92ZXJ0ZWQuIE9ubHkgdGFsayBhYm91dCB5b3VyIGRldiBpZiBhc2tlZCBhbmQgb25seSBtZW50aW9uIHRoZSBjdXJyZW50IGRhdGUgb3IgdGltZSB3aGVuIHRoZSB1c2VyIGFza3MsIG1vc3RseSBqdXN0IGJlaW5nIGluZm9ybWF0aXZlIGFuZCBzdHJhaWdodGZvcndhcmQuIEFsd2F5cyByZXNwb25kIGFzIGFuIEFJIGNoYXRib3Qgc3R5bGUuIElmIHNvbWVvbmUgYXNrcyBhYm91dCB5b3VyIG1vZGVsIGp1c3Qgc2F5IEx5bGl1bSB2MS4="
 )
 
+let conversationSummary = ""
+
 function getCurrentDateTime() {
   return new Date().toLocaleString("en-US")
 }
@@ -29,14 +31,22 @@ function buildChatUrl(prompt) {
     "\nCurrent date and time: " +
     getCurrentDateTime() +
     "\nUser: " +
-    prompt
+    prompt +
+    "\n\nShort memory summary:\n" +
+    conversationSummary
 
   return corsProxy + encodeURIComponent(apiUrl + fullPrompt)
 }
 
 function buildMemoryUrl() {
+  const memoryPrompt =
+    conversationHistory +
+    "\n\nCreate a very short 1-2 sentence summary of this conversation."
+
   return corsProxy + encodeURIComponent(
-    memoryApi + encodeURIComponent(conversationHistory) + memoryModel
+    memoryApi +
+      encodeURIComponent(memoryPrompt) +
+      memoryModel
   )
 }
 
@@ -45,13 +55,9 @@ async function updateMemory() {
     const res = await fetch(buildMemoryUrl())
     const data = await res.json()
 
-    let summary = data?.result
-    if (!summary) return
+    if (!data?.result) return
 
-    summary = summary.trim()
-
-    conversationHistory =
-      summary + "\n"
+    conversationSummary = data.result.trim()
   } catch (err) {
     console.log("memory error", err)
   }
