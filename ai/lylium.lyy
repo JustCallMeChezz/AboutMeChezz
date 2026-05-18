@@ -1,5 +1,8 @@
-const apiUrl =
+const chatApi =
   "https://api-nanzz.my.id/docs/ai/claude-haiku?text="
+
+const memoryApi =
+  "https://api-nanzz.my.id/docs/ai/notegpt?q=memory&model=gemini-3.1-flash-lite-preview"
 
 const corsProxy = "https://corsproxy.io/?"
 
@@ -18,7 +21,7 @@ function trimMemory(maxChars = 2000) {
   }
 }
 
-function buildUrl(prompt) {
+function buildChatUrl(prompt) {
   const fullPrompt =
     conversationHistory +
     "\nCurrent date and time: " +
@@ -26,19 +29,36 @@ function buildUrl(prompt) {
     "\nUser: " +
     prompt
 
-  const url =
-    apiUrl + encodeURIComponent(fullPrompt)
+  return corsProxy + encodeURIComponent(chatApi + fullPrompt)
+}
 
-  return corsProxy + encodeURIComponent(url)
+function buildMemoryUrl(text) {
+  return corsProxy + encodeURIComponent(memoryApi + "&q=" + encodeURIComponent(text))
+}
+
+async function updateMemory(text) {
+  try {
+    const res = await fetch(buildMemoryUrl(text))
+    const data = await res.json()
+
+    const memory = data?.result
+
+    if (memory) {
+      conversationHistory = memory
+        .replace(/^"+|"+$/g, "")
+        .trim()
+    }
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 async function tryFetchFromApis(prompt) {
   try {
-    const res = await fetch(buildUrl(prompt))
+    const res = await fetch(buildChatUrl(prompt))
     const data = await res.json()
 
     let response = data?.result
-
     if (!response) return null
 
     response = response
@@ -47,10 +67,11 @@ async function tryFetchFromApis(prompt) {
       .replace(/[\u{1F300}-\u{1FAFF}]/gu, "")
       .trim()
 
-    conversationHistory +=
-      "User: " + prompt + "\nAI: " + response + "\n"
-
-    trimMemory()
+    await updateMemory(
+      conversationHistory +
+      "\nUser: " + prompt +
+      "\nAI: " + response
+    )
 
     return response
   } catch (err) {
