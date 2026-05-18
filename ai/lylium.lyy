@@ -1,4 +1,6 @@
-const apiUrl = "https://api-nanzz.my.id/docs/ai/claude-haiku?text="
+const apiUrl =
+  "https://api-nanzz.my.id/docs/ai/claude-haiku?text="
+
 const corsProxy = "https://corsproxy.io/?"
 
 let conversationHistory = atob(
@@ -10,6 +12,12 @@ function getCurrentDateTime() {
   return now.toLocaleString("en-US")
 }
 
+function trimMemory(maxChars = 2000) {
+  if (conversationHistory.length > maxChars) {
+    conversationHistory = conversationHistory.slice(-maxChars)
+  }
+}
+
 function buildUrl(prompt) {
   const fullPrompt =
     conversationHistory +
@@ -18,7 +26,10 @@ function buildUrl(prompt) {
     "\nUser: " +
     prompt
 
-  return corsProxy + encodeURIComponent(apiUrl + fullPrompt)
+  const url =
+    apiUrl + encodeURIComponent(fullPrompt)
+
+  return corsProxy + encodeURIComponent(url)
 }
 
 async function tryFetchFromApis(prompt) {
@@ -38,6 +49,8 @@ async function tryFetchFromApis(prompt) {
 
     conversationHistory +=
       "User: " + prompt + "\nAI: " + response + "\n"
+
+    trimMemory()
 
     return response
   } catch (err) {
