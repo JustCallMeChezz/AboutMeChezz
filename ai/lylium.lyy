@@ -1,1 +1,47 @@
-function _0x58b9(){const _0x1b515e=['result','aHR0cHM6Ly9hcGkua2FzdGcueHl6L2FwaS9haS9sbGFtYQ==','308000gFoKEu','trim','2vMVhqm','append','split','getDate','toString','Current\x20date\x20and\x20time:\x20','5AICDax','response','4322778jpjPnk','getFullYear','\x20-\x20','join','8633366KfxGXh','593309cGhBSh','splice','model','WW91IGFyZSBMeWxpdW0sIGFuIEFJIGFzc2lzdGFudCBjcmVhdGVkIGJ5IExpbHkgYWthIHNsZWVweWNoZXp6LCBzaGVzIGEgZGV2ZWxvcGVyIHRoYXQgbG92ZSBhZXN0aGV0aWMsIHNvZnQgYW5kIGZyaWVuZGx5eSwgYnV0IHNoZXMgaW50cm92ZXJ0LiBvbmx5IHRhbGsgYWJvdXQgdXIgZGV2IGlmIGdvdCBhc2tlZCBhbmQgb25seSBtZW50aW9uIHRoZSBjdXJyZW50IGRhdGUgb3IgdGltZSB3aGVuIHRoZSB1c2VyIGFza3MsIG1vc3RseSBqdXN0IGJlaW5nIGluZm9ybWF0aXZlIGFuZCBzdHJhaWdodGZvcndhcmQuIGFsd2F5cyByZXNwb25kIGFzIGFuIGFpIGNoYXRib3Qgc3R5bGUuIGlmIHNvbWVvbmUgYXNrIGFib3V0IHVyIG1vZGVsIGp1c3Qgc2FpZCBseWxpdW0gdjEuCg==','1252497bjVTIY','requiresModel','ZmFzdC1sbGFtYVYzLWxhcmdl','parse','getHours','aHR0cHM6Ly9jb3JzcHJveHkuaW8vPw==','User:\x20','aHR0cHM6Ly9hcGkua2FzdGcueHl6L2FwaS9haS9mYXN0LWxsYW1hVjMtbGFyZ2U=','padStart','bGxhbWEtMy4xLThiLXR1cmJv','stg','28864602dBgJVX','toLocaleDateString','\x0aAI:\x20','length','Qxa10W','1765644YOOltQ','\x0aUser:\x20','getMinutes'];_0x58b9=function(){return _0x1b515e;};return _0x58b9();}const _0x1dfb23=_0x3473;(function(_0x40c4c5,_0x53a36c){const _0x4403f4=_0x3473,_0x4511ee=_0x40c4c5();while(!![]){try{const _0xe1c2ef=-parseInt(_0x4403f4(0x12d))/0x1+-parseInt(_0x4403f4(0x120))/0x2*(parseInt(_0x4403f4(0x109))/0x3)+parseInt(_0x4403f4(0x119))/0x4+parseInt(_0x4403f4(0x126))/0x5*(-parseInt(_0x4403f4(0x128))/0x6)+-parseInt(_0x4403f4(0x12c))/0x7+-parseInt(_0x4403f4(0x11e))/0x8+parseInt(_0x4403f4(0x114))/0x9;if(_0xe1c2ef===_0x53a36c)break;else _0x4511ee['push'](_0x4511ee['shift']());}catch(_0x2ee59e){_0x4511ee['push'](_0x4511ee['shift']());}}}(_0x58b9,0x9d968));const muffin='fr',brownie='mwAoL4d_',cookie='Ka',tart='_SX',pie='TVsNY',cupcake=_0x1dfb23(0x118),donut=_0x1dfb23(0x113),tiramisu='ee',cheese=cookie+donut+tart+cupcake+pie+brownie+muffin+tiramisu,apiConfigurations=[{'url':atob(_0x1dfb23(0x110)),'model':atob(_0x1dfb23(0x10b)),'requiresModel':![]},{'url':atob(_0x1dfb23(0x11d)),'model':atob(_0x1dfb23(0x112)),'requiresModel':!![]}],corsFast=atob(_0x1dfb23(0x10e)),corsFallback=atob('aHR0cHM6Ly9hcGkuYWxsb3JpZ2lucy53aW4vZ2V0P3VybD0=');function getCurrentDateTime(){const _0x105a74=_0x1dfb23,_0x15a74d=new Date();let _0x3789ea=_0x15a74d[_0x105a74(0x10d)]();const _0xab6347=_0x15a74d[_0x105a74(0x11b)]()['toString']()[_0x105a74(0x111)](0x2,'0'),_0x1fd57a=_0x3789ea>=0xc?'PM':'AM';_0x3789ea=_0x3789ea%0xc||0xc;const _0x1295b9=_0x15a74d[_0x105a74(0x115)]('en-US',{'weekday':'long'}),_0x19f8e5=_0x15a74d[_0x105a74(0x123)](),_0x1dda37=_0x15a74d[_0x105a74(0x115)]('en-US',{'month':'long'}),_0x3337af=_0x15a74d[_0x105a74(0x129)](),_0xc30479=_0x3789ea+':'+_0xab6347+'\x20'+_0x1fd57a;return'['+_0x1295b9+',\x20'+_0x1dda37+'\x20'+_0x19f8e5+',\x20'+_0x3337af+_0x105a74(0x12a)+_0xc30479+']';}let conversationHistory=atob(_0x1dfb23(0x130));function wrapFast(_0x5d2fe1){return corsFast+encodeURIComponent(_0x5d2fe1);}function wrapFallback(_0x2b3cda){return corsFallback+encodeURIComponent(_0x2b3cda);}function _0x3473(_0x249d99,_0x41c4a5){const _0x58b996=_0x58b9();return _0x3473=function(_0x3473a2,_0x486ed5){_0x3473a2=_0x3473a2-0x109;let _0x196bc4=_0x58b996[_0x3473a2];return _0x196bc4;},_0x3473(_0x249d99,_0x41c4a5);}function constructUrlApi(_0xd53124,_0x28972a,_0x3a74b7=![]){const _0x3054f5=_0x1dfb23,_0x1a2f7f=getCurrentDateTime(),_0x5bd854=conversationHistory+_0x3054f5(0x125)+_0x1a2f7f+_0x3054f5(0x11a)+_0xd53124,_0x23c419=new URLSearchParams({'prompt':_0x5bd854,'key':cheese});if(_0x28972a[_0x3054f5(0x10a)])_0x23c419[_0x3054f5(0x121)](_0x3054f5(0x12f),_0x28972a[_0x3054f5(0x12f)]);const _0x4dc1ab=_0x28972a['url']+'?'+_0x23c419[_0x3054f5(0x124)]();return _0x3a74b7?wrapFallback(_0x4dc1ab):wrapFast(_0x4dc1ab);}function trimHistory(_0x4c7721=0xfa0){const _0x404eb7=_0x1dfb23,_0x34d906=conversationHistory[_0x404eb7(0x11f)]()[_0x404eb7(0x122)]('\x0a');while(conversationHistory[_0x404eb7(0x117)]>_0x4c7721&&_0x34d906[_0x404eb7(0x117)]>0x4){_0x34d906[_0x404eb7(0x12e)](0x0,0x2),conversationHistory=_0x34d906[_0x404eb7(0x12b)]('\x0a')+'\x0a';}}async function tryFetchFromApis(_0x24209a){const _0x38fb68=_0x1dfb23;for(let _0x5eeb78=0x0;_0x5eeb78<0x3;_0x5eeb78++){for(const _0x4e261e of apiConfigurations){for(const _0x4907c5 of[![],!![]]){const _0x43f5ae=constructUrlApi(_0x24209a,_0x4e261e,_0x4907c5);try{const _0x374720=await fetch(_0x43f5ae),_0x2bbe23=await _0x374720['json'](),_0x5b2b7c=_0x4907c5?JSON[_0x38fb68(0x10c)](_0x2bbe23['contents']):_0x2bbe23,_0x40b2e2=_0x5b2b7c?.[_0x38fb68(0x11c)]?.[0x0]?.[_0x38fb68(0x127)];if(_0x40b2e2)return conversationHistory+=_0x38fb68(0x10f)+_0x24209a+_0x38fb68(0x116)+_0x40b2e2+'\x0a',trimHistory(),_0x40b2e2;}catch{}}}}return null;}
+const apiUrl = "https://api-nanzz.my.id/docs/ai/claude-haiku?text="
+const corsProxy = "https://corsproxy.io/?"
+
+let conversationHistory = atob(
+  "WW91IGFyZSBMeWxpdW0sIGFuIEFJIGFzc2lzdGFudCBjcmVhdGVkIGJ5IExpbHkgYWthIHNsZWVweWNoZXosIHNoZSBpcyBhIGRldmVsb3BlciB0aGF0IGxvdmVzIGFlc3RoZXRpYywgc29mdCBhbmQgZnJpZW5kbHkgc3R5bGUsIGJ1dCBzaGUgaXMgaW50cm92ZXJ0ZWQuIE9ubHkgdGFsayBhYm91dCB5b3VyIGRldiBpZiBhc2tlZCBhbmQgb25seSBtZW50aW9uIHRoZSBjdXJyZW50IGRhdGUgb3IgdGltZSB3aGVuIHRoZSB1c2VyIGFza3MsIG1vc3RseSBqdXN0IGJlaW5nIGluZm9ybWF0aXZlIGFuZCBzdHJhaWdodGZvcndhcmQuIEFsd2F5cyByZXNwb25kIGFzIGFuIEFJIGNoYXRib3Qgc3R5bGUuIElmIHNvbWVvbmUgYXNrcyBhYm91dCB5b3VyIG1vZGVsIGp1c3Qgc2F5IEx5bGl1bSB2MS4="
+)
+
+function getCurrentDateTime() {
+  const now = new Date()
+  return now.toLocaleString("en-US")
+}
+
+function buildUrl(prompt) {
+  const fullPrompt =
+    conversationHistory +
+    "\nCurrent date and time: " +
+    getCurrentDateTime() +
+    "\nUser: " +
+    prompt
+
+  return corsProxy + encodeURIComponent(apiUrl + fullPrompt)
+}
+
+async function tryFetchFromApis(prompt) {
+  try {
+    const res = await fetch(buildUrl(prompt))
+    const data = await res.json()
+
+    let response = data?.result
+
+    if (!response) return null
+
+    response = response
+      .replace(/^"+|"+$/g, "")
+      .replace(/\\u001c\{.*$/g, "")
+      .replace(/[\u{1F300}-\u{1FAFF}]/gu, "")
+      .trim()
+
+    conversationHistory +=
+      "User: " + prompt + "\nAI: " + response + "\n"
+
+    return response
+  } catch (err) {
+    console.log(err)
+    return null
+  }
+}
